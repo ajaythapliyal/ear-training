@@ -1,0 +1,23 @@
+:root {
+    --off-white: #eeeeee;
+    --teal-v1: #00adb5;
+    --dark-grey: #393e46;
+}
+
+.app-container {
+    display: grid;
+    grid: min-content 1fr/1fr;
+}
+
+header {
+    background-color: var(--dark-grey);
+    color: var(--off-white);
+}
+
+h3 {
+    margin-left: 1em;
+}
+
+body {
+    margin: 0px;
+}

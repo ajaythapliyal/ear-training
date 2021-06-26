@@ -1,3 +1,4 @@
 import m from 'mithril'
+import app from './app'
 
-m.render(document.body, 'hello world')
+m.route(document.body, '/home', { '/home': app })
