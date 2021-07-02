@@ -4,11 +4,6 @@
     --dark-grey: #393e46;
 }
 
-.app-container {
-    display: grid;
-    grid: min-content 1fr/1fr;
-}
-
 header {
     background-color: var(--dark-grey);
     color: var(--off-white);
@@ -20,4 +15,23 @@ h3 {
 
 body {
     margin: 0px;
+    min-height: 100vh;
+    display: grid;
+    grid: min-content 1fr/1fr;
+    gap: 1em;
+    background-color: var(--off-white);
+}
+
+.quiz-container {
+    justify-self: center;
+    align-self: center;
+}
+
+/* .quiz {
+    display: flex;
+    justify-content: center;
+} */
+
+.play-icon {
+    color: var(--teal-v1);
 }
