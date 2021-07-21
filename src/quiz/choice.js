@@ -2,7 +2,7 @@ import m from 'mithril'
 
 const choice = {
     view() {
-        return m('button', 'c#')
+        return m('button', { class: 'choice' }, 'c#')
     },
 }
 

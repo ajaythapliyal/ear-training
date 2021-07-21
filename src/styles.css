@@ -17,7 +17,7 @@ body {
     margin: 0px;
     min-height: 100vh;
     display: grid;
-    grid: min-content 1fr / 1fr minmax(320px, 1fr) 1fr;
+    grid: min-content 1fr / 1fr minmax(20rem, 1fr) 1fr;
     gap: 1em;
     background-color: var(--off-white);
 }
@@ -37,21 +37,26 @@ header {
     align-items: center;
 }
 
-/* .quiz-choice {
+.quiz-choice {
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-} */
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.choice {
+    flex: 0 0 45%;
+    margin-bottom: 0.75rem;
+}
 
 .play-icon {
     color: var(--teal-v1);
-    font-size: 6em;
+    font-size: 6rem;
+    margin-bottom: 1rem;
 }
-
-/*implement media query for play icon above 1000px*/
 
 @media (min-width: 1000px) {
     .play-icon {
-        font-size: 8em;
+        font-size: 8rem;
     }
 }
