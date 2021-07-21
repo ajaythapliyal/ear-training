@@ -47,12 +47,24 @@ header {
 .choice {
     flex: 0 0 45%;
     margin-bottom: 0.75rem;
+    border: 2px solid var(--teal-v1);
+    background-color: var(--off-white);
+    color: var(--teal-v1);
+    height: 2.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.choice:hover {
+    background-color: var(--teal-v1);
+    color: var(--off-white);
 }
 
 .play-icon {
     color: var(--teal-v1);
     font-size: 6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 @media (min-width: 1000px) {
