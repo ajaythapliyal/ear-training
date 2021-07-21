@@ -10,28 +10,48 @@ header {
 }
 
 h3 {
-    margin-left: 1em;
+    margin-left: 1rem;
 }
 
 body {
     margin: 0px;
     min-height: 100vh;
     display: grid;
-    grid: min-content 1fr/1fr;
+    grid: min-content 1fr / 1fr minmax(320px, 1fr) 1fr;
     gap: 1em;
     background-color: var(--off-white);
 }
 
+header {
+    grid-column: 1/-1;
+}
+
 .quiz-container {
-    justify-self: center;
+    grid-column: 2/3;
     align-self: center;
 }
 
-/* .quiz {
+.quiz {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .quiz-choice {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 } */
 
 .play-icon {
     color: var(--teal-v1);
+    font-size: 6em;
+}
+
+/*implement media query for play icon above 1000px*/
+
+@media (min-width: 1000px) {
+    .play-icon {
+        font-size: 8em;
+    }
 }
