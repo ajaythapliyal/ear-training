@@ -1,9 +1,19 @@
 import m from 'mithril'
 
-function choice(props) {
+function choice() {
     return {
-        view() {
-            return m('button', { class: 'choice' }, props.attrs.label)
+        view(vnode) {
+            const { label } = vnode.attrs
+            return m(
+                'button',
+                {
+                    class: 'choice',
+                    onclick: () => {
+                        vnode.attrs.resetQuiz()
+                    },
+                },
+                label
+            )
         },
     }
 }

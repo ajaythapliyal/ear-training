@@ -5,18 +5,31 @@ import choice from './choice'
 import { audioPlayerType, getAudioChoices } from './audioPlayer'
 
 function quiz() {
-    const { sounds, octave } = getAudioChoices(audioPlayerType.single_note)
-    const playedNote = `${sampleSize(sounds, 1)}${octave}`
+    let { sounds, octave } = getAudioChoices(audioPlayerType.single_note)
+    let playedSound = sampleSize(sounds, 1)[0]
     let isPlaying = false
     const synth = new Tone.Synth().toDestination()
+
     function togglePlay() {
         if (isPlaying) {
             synth.triggerRelease()
         } else {
-            synth.triggerAttack(playedNote, Tone.now())
+            synth.triggerAttack(`${playedSound}${octave}`, Tone.now())
         }
         isPlaying = !isPlaying
     }
+
+    function resetQuiz() {
+        const audioChoices = getAudioChoices(audioPlayerType.single_note)
+        sounds = audioChoices.sounds
+        octave = audioChoices.octave
+        playedSound = sampleSize(sounds, 1)
+        if (isPlaying) {
+            synth.triggerRelease()
+            synth.triggerAttack(`${playedSound}${octave}`, Tone.now())
+        }
+    }
+
     return {
         view() {
             return m('div', { class: 'quiz-container' }, [
@@ -33,10 +46,26 @@ function quiz() {
                             onclick: () => togglePlay(),
                         }),
                         m('div', { class: 'quiz-choice' }, [
-                            m(choice, { label: sounds[0] }),
-                            m(choice, { label: sounds[1] }),
-                            m(choice, { label: sounds[2] }),
-                            m(choice, { label: sounds[3] }),
+                            m(choice, {
+                                label: sounds[0],
+                                resetQuiz,
+                                playedSound,
+                            }),
+                            m(choice, {
+                                label: sounds[1],
+                                resetQuiz,
+                                playedSound,
+                            }),
+                            m(choice, {
+                                label: sounds[2],
+                                resetQuiz,
+                                playedSound,
+                            }),
+                            m(choice, {
+                                label: sounds[3],
+                                resetQuiz,
+                                playedSound,
+                            }),
                         ]),
                     ]
                 ),
