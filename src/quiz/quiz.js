@@ -51,36 +51,19 @@ function quiz() {
                                 : 'fa fa-play-circle play-icon',
                             onclick: () => togglePlay(),
                         }),
-                        m('div', { class: 'quiz-choice' }, [
-                            m(choice, {
-                                label: sounds[0],
-                                resetQuiz,
-                                isCorrect: playedSound === sounds[0],
-                                isRevealChoice,
-                                revealChoice,
-                            }),
-                            m(choice, {
-                                label: sounds[1],
-                                resetQuiz,
-                                isCorrect: playedSound === sounds[1],
-                                isRevealChoice,
-                                revealChoice,
-                            }),
-                            m(choice, {
-                                label: sounds[2],
-                                resetQuiz,
-                                isCorrect: playedSound === sounds[2],
-                                isRevealChoice,
-                                revealChoice,
-                            }),
-                            m(choice, {
-                                label: sounds[3],
-                                resetQuiz,
-                                isCorrect: playedSound === sounds[3],
-                                isRevealChoice,
-                                revealChoice,
-                            }),
-                        ]),
+                        m(
+                            'div',
+                            { class: 'quiz-choice' },
+                            sounds.map((sound) =>
+                                m(choice, {
+                                    label: sound,
+                                    resetQuiz,
+                                    isCorrect: playedSound === sound,
+                                    isRevealChoice,
+                                    revealChoice,
+                                })
+                            )
+                        ),
                     ]
                 ),
             ])

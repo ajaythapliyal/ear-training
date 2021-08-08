@@ -47,7 +47,6 @@ header {
 .choice,
 .choice-succ,
 .choice-fail {
-    /* .choice { */
     flex: 0 0 45%;
     margin-bottom: 0.75rem;
     border: 2px solid var(--teal-v1);
