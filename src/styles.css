@@ -44,7 +44,10 @@ header {
     justify-content: space-between;
 }
 
-.choice {
+.choice,
+.choice-succ,
+.choice-fail {
+    /* .choice { */
     flex: 0 0 45%;
     margin-bottom: 0.75rem;
     border: 2px solid var(--teal-v1);
@@ -58,6 +61,18 @@ header {
 .choice:hover {
     background-color: var(--teal-v1);
     color: var(--off-white);
+}
+
+.choice-succ {
+    background-color: green;
+    color: var(--off-white);
+    border: 2px solid green;
+}
+
+.choice-fail {
+    background-color: red;
+    color: var(--off-white);
+    border: 2px solid red;
 }
 
 .play-icon {

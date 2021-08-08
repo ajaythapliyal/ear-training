@@ -8,6 +8,7 @@ function quiz() {
     let { sounds, octave } = getAudioChoices(audioPlayerType.single_note)
     let playedSound = sampleSize(sounds, 1)[0]
     let isPlaying = false
+    let isRevealChoice = false
     const synth = new Tone.Synth().toDestination()
 
     function togglePlay() {
@@ -20,14 +21,19 @@ function quiz() {
     }
 
     function resetQuiz() {
+        isRevealChoice = false
         const audioChoices = getAudioChoices(audioPlayerType.single_note)
         sounds = audioChoices.sounds
         octave = audioChoices.octave
-        playedSound = sampleSize(sounds, 1)
+        playedSound = sampleSize(sounds, 1).pop()
         if (isPlaying) {
             synth.triggerRelease()
             synth.triggerAttack(`${playedSound}${octave}`, Tone.now())
         }
+    }
+
+    function revealChoice() {
+        isRevealChoice = true
     }
 
     return {
@@ -49,22 +55,30 @@ function quiz() {
                             m(choice, {
                                 label: sounds[0],
                                 resetQuiz,
-                                playedSound,
+                                isCorrect: playedSound === sounds[0],
+                                isRevealChoice,
+                                revealChoice,
                             }),
                             m(choice, {
                                 label: sounds[1],
                                 resetQuiz,
-                                playedSound,
+                                isCorrect: playedSound === sounds[1],
+                                isRevealChoice,
+                                revealChoice,
                             }),
                             m(choice, {
                                 label: sounds[2],
                                 resetQuiz,
-                                playedSound,
+                                isCorrect: playedSound === sounds[2],
+                                isRevealChoice,
+                                revealChoice,
                             }),
                             m(choice, {
                                 label: sounds[3],
                                 resetQuiz,
-                                playedSound,
+                                isCorrect: playedSound === sounds[3],
+                                isRevealChoice,
+                                revealChoice,
                             }),
                         ]),
                     ]
