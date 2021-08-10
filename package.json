@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack ./src/index.js --output-path bin --output-filename app.js --watch --mode development",
+        "dev": "webpack serve --mode development --open",
+        "start": "webpack --mode production && node server.js",
         "lint": "eslint"
     },
     "keywords": [],
@@ -13,8 +13,12 @@
     "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
+        "css-loader": "^6.2.0",
+        "express": "^4.17.1",
         "lodash": "^4.17.21",
         "mithril": "^2.0.4",
+        "script-loader": "^0.7.2",
+        "style-loader": "^3.2.1",
         "teoria": "^2.5.0",
         "tone": "^14.7.77"
     },
@@ -27,6 +31,7 @@
         "prettier": "^2.3.1",
         "source-map-loader": "^3.0.0",
         "webpack": "^5.40.0",
-        "webpack-cli": "^4.7.2"
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
     }
 }
