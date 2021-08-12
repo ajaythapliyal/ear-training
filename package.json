@@ -13,16 +13,18 @@
     "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
-        "css-loader": "^6.2.0",
-        "express": "^4.17.1",
+        "css-loader": "^1.0.0",
+        "express": "^4.16.3",
         "lodash": "^4.17.21",
         "mithril": "^2.0.4",
+        "path": "^0.12.7",
         "script-loader": "^0.7.2",
-        "style-loader": "^3.2.1",
+        "style-loader": "^0.22.1",
         "teoria": "^2.5.0",
         "tone": "^14.7.77"
     },
     "devDependencies": {
+        "@webpack-cli/serve": "^1.5.1",
         "eslint": "^7.29.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-config-prettier": "^8.3.0",
@@ -30,8 +32,8 @@
         "eslint-plugin-prettier": "^3.4.0",
         "prettier": "^2.3.1",
         "source-map-loader": "^3.0.0",
-        "webpack": "^5.40.0",
-        "webpack-cli": "^4.7.2",
-        "webpack-dev-server": "^3.11.2"
+        "webpack": "^4.16.5",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.5"
     }
 }
