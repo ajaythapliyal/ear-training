@@ -45,12 +45,12 @@ function quiz() {
                         class: 'quiz',
                     },
                     [
-                        // m('i', {
-                        //     class: isPlaying
-                        //         ? 'fa fa-pause-circle play-icon'
-                        //         : 'fa fa-play-circle play-icon',
-                        //     onclick: () => togglePlay(),
-                        // }),
+                        m('i', {
+                            class: isPlaying
+                                ? 'fa fa-pause-circle play-icon'
+                                : 'fa fa-play-circle play-icon',
+                            onclick: () => togglePlay(),
+                        }),
                         m(
                             'div',
                             { class: 'quiz-choice' },
